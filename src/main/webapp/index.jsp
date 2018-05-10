@@ -21,7 +21,7 @@
     <form class="form-signin"
           action="${pageContext.servletContext.contextPath}/IngresoServlet" method="post">
       
-        <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Escudo_Atl%C3%A9tico_Nacional_1954.png" alt="" width="72" height="72">
+        <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Escudo_Atl%C3%A9tico_Nacional_1954.png" alt="" width="150" height="150">
       <h1 class="h3 mb-3 font-weight-normal">Ingreso</h1>
       
       <label for="inputEmail" class="sr-only">Correo</label>
