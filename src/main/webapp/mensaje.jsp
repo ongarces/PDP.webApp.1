@@ -9,13 +9,36 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
+
+        <title>-MENSAJE-</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="${pageContext.servletContext.contextPath}/css/jumbotron.css" rel="stylesheet">
     </head>
     <body>
-        <h1>
-            <c:out value="${sessionScope.MENSAJE}"></c:out>
-            <a href="${pageContext.servletContext.contextPath}/index.jsp">Regresar</a>
-        </h1>
+
+        <main role="main">
+
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+                <p>ESTE ES EL MENSAJE DE LA APLICACION - CRISTIAN GARCES -</p>
+                <h1>
+                    <c:out value="${sessionScope.MENSAJE}"></c:out>
+                    
+                    <a href="${pageContext.servletContext.contextPath}/index.jsp">Regresar</a>
+                </h1>
+            </div>
+
+        </main>
+
+        <%@ include file = "/WEB-INF/jspf/footer.jspf" %>
     </body>
 </html>

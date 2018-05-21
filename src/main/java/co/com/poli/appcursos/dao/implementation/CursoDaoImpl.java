@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  *
- * @author giovanny
+ * @author cgaop
  */
 public class CursoDaoImpl implements ICursoDao {
 

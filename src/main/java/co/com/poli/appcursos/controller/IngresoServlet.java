@@ -46,11 +46,11 @@ public class IngresoServlet extends HttpServlet {
         UsuarioBusinessImpl uBusinessImpl = new UsuarioBusinessImpl();
         Usuario  usuario = uBusinessImpl.obtenerUsuario(email, clave);
         
-        String mensaje="";
+        String mensaje="Hey...";
         
-        if (usuario == null) {//Si usuario no existe
-            rd = request.getRequestDispatcher("/mensaje.jsp");
+        if (usuario == null) {//Si usuario no existe            
             mensaje = "Email o clave no validos...";
+            rd = request.getRequestDispatcher("/mensaje.jsp");
         }else{//si existe
             rd = request.getRequestDispatcher("/view/menu.jsp");
         }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.com.poli.appcursos.data;
 
 import co.com.poli.appcursos.model.Curso;
@@ -11,7 +6,7 @@ import java.util.List;
 
 /**
  *
- * @author giovanny
+ * @author cgaop
  */
 public class CursoData {
         
@@ -20,8 +15,11 @@ public class CursoData {
     static {        
         listaCursos = new ArrayList<Curso>(){
             {
-                add(new Curso("10", "Java", 15D, 500000D, Boolean.TRUE));
-                add(new Curso("20", "Node", 20D, 600000D, Boolean.TRUE));
+                add(new Curso("100", "Java", 15D, 500000D, Boolean.TRUE));
+                add(new Curso("200", "Php", 20D, 600000D, Boolean.TRUE));
+                add(new Curso("300", "Ruby", 20D, 650000D, Boolean.TRUE));
+                add(new Curso("400", "JS", 20D, 680000D, Boolean.TRUE));
+                add(new Curso("500", "Html", 20D, 30000D, Boolean.TRUE));
             }
         };                
     }

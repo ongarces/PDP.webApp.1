@@ -36,16 +36,20 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">Usuarios <span class="sr-only">(current)</span></a>
-                    </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/menu.jsp">MENU</a>
-                    </li>
-
+                    </li>                    
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">Usuarios</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/cursos.jsp">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursosServlet?accion=listar">Listar Cursos</a>
                     </li>
 
                 </ul>        
@@ -57,11 +61,11 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    
+
                     <!-- FORM INVOCA AL SERVLET -->
                     <form method="post"
                           action="${pageContext.servletContext.contextPath}/CursosServlet">
-                        
+
                         <div class="form-row">
                             <div class="col">
                                 <input type="text" name="txtidcurso" class="form-control" placeholder="Id del curso">
@@ -73,7 +77,7 @@
 
                         <div class="form-row">                            
                             <div class="col">
-                                <input type="number" name="txthorascurso" class="form-control" placeholder="Horas del curso">
+                                <input type="text" name="txthorascurso" class="form-control" placeholder="Horas del curso">
                             </div>
                             <div class="col">
                                 <input type="text" name="txtvalorcurso" class="form-control" placeholder="Valor del curso">
@@ -82,7 +86,7 @@
 
                         <div class="form-row">                            
                             <div class="col-sm-3">
-                                 <label for="inputState">Estado</label>                                 
+                                <label for="inputState">Estado</label>                                 
                             </div>
                             <div class="col-sm-3"> 
                                 <select id="inputState" class="form-control" name="txtestadocurso">
@@ -91,28 +95,28 @@
                                 </select>
                             </div>
                         </div>
-                       
-                        <br>
-                        
-                        <div class="form-row">
-                            <div class="col-sm-2">
-                                <button name="accion" value="crear" type="submit" class="btn btn-primary">Registrar Curso</button>
-                            </div>
-                            <div class="col-sm-2">
-                                <button name="accion" value="listar" type="submit" class="btn btn-primary">Listar Cursos</button>
-                            </div>
-                        </div>
-                        
+
+                        <br><br><br>
+
+                        <!-- DIV BOTONES -->
+                        <!-- DIV BOTONES -->
+                        <center>
+                            <div class="">
+                                <button name="accion" value="crear" type="submit" class="btn btn-primary">Registrar curso</button>
+                            </div>                            
+                            <!--div class="">
+                                <button name="accion" value="listar" type="submit" class="btn btn-primary">Listar cursos</button>
+                            </div-->
+                        </center>
+
                     </form>
 
                 </div>
             </div>
 
         </main>
-
-        <footer class="container">
-            <p>&copy; Company 2017-2018</p>
-        </footer>
+                          
+        <%@ include file = "/WEB-INF/jspf/footer.jspf" %>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

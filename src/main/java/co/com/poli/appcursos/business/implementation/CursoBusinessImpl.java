@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package co.com.poli.appcursos.business.implementation;
 
 import co.com.poli.appcursos.business.ICursoBusiness;
@@ -12,7 +7,7 @@ import java.util.List;
 
 /**
  *
- * @author giovanny
+ * @author cgaop
  */
 public class CursoBusinessImpl implements ICursoBusiness {
 
@@ -31,8 +26,8 @@ public class CursoBusinessImpl implements ICursoBusiness {
     @Override
     public String crearCurso(Curso curso) {
         String respuesta = "Curso ya existe";
-        Curso cursoNuevo = obtenerCurso(curso.getIdCurso());
-        if (cursoNuevo == null) {
+        Curso cursoNuevo = obtenerCurso(curso.getIdCurso());//crea y extrae el curso que mandan
+        if (cursoNuevo == null) {//si no esta buscado xel id(no existe)-> crea
             respuesta = cursoDaoImpl.crearCurso(curso);
         }
         return respuesta;
@@ -42,7 +37,7 @@ public class CursoBusinessImpl implements ICursoBusiness {
     public String modificarCurso(Curso curso) {
         String respuesta = "Curso no existe";
         Curso cursoNuevo = obtenerCurso(curso.getIdCurso());
-        if (cursoNuevo != null) {
+        if (cursoNuevo != null) {//si esta--> modifique
             respuesta = cursoDaoImpl.modificarCurso(curso);
         }
         return respuesta;

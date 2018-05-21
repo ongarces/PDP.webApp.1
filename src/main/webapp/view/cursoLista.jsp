@@ -1,6 +1,6 @@
 <%-- 
-    Document   : usuarioLista
-    Created on : 9/05/2018, 07:55:24 PM
+    Document   : cursoLista
+    Created on : 20/05/2018, 04:40:28 PM
     Author     : cgaop
 --%>
 
@@ -15,7 +15,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../../../favicon.ico">
 
-        <title>LISTA USUARIOS</title>
+        <title>LISTA CURSOS</title>
 
         <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +28,7 @@
 
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
-            <a class="navbar-brand" href="#">Aplicacion - LISTA USUARIO -</a>
+            <a class="navbar-brand" href="${pageContext.servletContext.contextPath}/view/menu.jsp">Aplicacion - LISTA CURSO -</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/menu.jsp">MENU</a>
                     </li> 
@@ -46,10 +46,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/cursos.jsp">Cursos</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursosServlet?accion=listar">Listar Cursos</a>
                     </li>
 
@@ -67,37 +67,34 @@
                     <br><br>
 
                     <table class="table">
-                        <caption>Lista de usuarios</caption>
+                        <caption>Lista de cursos</caption>
                         <thead>
                             <tr>
-                                <th scope="col">Documento</th>
+                                <th scope="col">Id del curso</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Apellidos</th>
-                                <th scope="col">Email</th>
+                                <th scope="col">Horas</th>
+                                <th scope="col">Valor del curso</th>
                                 <th scope="col">Estado</th>
-                                <th scope="col">Rol</th>
                                 <th scope="col">Accion</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="usuario" items="${sessionScope.LISTADO}">
+                            <c:forEach var="curso" items="${sessionScope.LISTADO}">
                                 <tr>
-                                    <td><c:out value="${usuario.getDocumento()}"/></td>
-                                    <td><c:out value="${usuario.getNombres()}"/></td>
-                                    <td><c:out value="${usuario.getApellidos()}"/></td>
-                                    <td><c:out value="${usuario.getEmail()}"/></td>
-                                    <td><c:out value="${usuario.getEstado()}"/></td>
-                                    <td><c:out value="${usuario.getRol()}"/></td>
+                                    <td><c:out value="${curso.getIdCurso()}"/></td>
+                                    <td><c:out value="${curso.getNombre()}"/></td>
+                                    <td><c:out value="${curso.getHoras()}"/></td>
+                                    <td><c:out value="${curso.getValorCurso()}"/></td>
+                                    <td><c:out value="${curso.getEstado()}"/></td>
                                     <td>
                                         <div class="col">
                                             <a class="btn btn-primary" 
-                                               href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=eliminar&idUser=${usuario.getDocumento()}">Eliminar</a>
+                                               href="${pageContext.servletContext.contextPath}/CursosServlet?accion=eliminar&idCurso=${curso.getIdCurso()}">Eliminar</a>
                                             <a class="btn btn-primary"
-                                               href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=modificar&idUser=${usuario.getDocumento()}">Modificar</a>
+                                               href="${pageContext.servletContext.contextPath}/CursosServlet?accion=modificar&idCurso=${curso.getIdCurso()}">Modificar</a>
                                         </div> 
                                     </td>
                                 </tr>
-                                
                             </c:forEach>
                             
                         </tbody>

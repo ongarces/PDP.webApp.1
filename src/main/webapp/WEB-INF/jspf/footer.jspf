@@ -1,0 +1,6 @@
+<%-- any content can be specified here e.g.: --%>
+<%@ page pageEncoding="UTF-8" %>
+
+<h4>Hello World! </h4><br>
+<p>This is a footer, made by CGA - PDP 2018.1</p>
+<p>&copy; Company 2018</p>

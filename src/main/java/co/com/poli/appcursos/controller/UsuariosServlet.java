@@ -47,9 +47,7 @@ public class UsuariosServlet extends HttpServlet {
                 String rol = request.getParameter("txtrol");
 
                 Usuario usuario = new Usuario(documento, nombres, apellidos, email, clave, rol, estado);
-
                 String mensaje = uBusinessImpl.crearUsuario(usuario);
-
                 session.setAttribute("MENSAJE", mensaje);
 
                 rd = request.getRequestDispatcher("/mensaje.jsp");
@@ -57,9 +55,39 @@ public class UsuariosServlet extends HttpServlet {
                 break;
 
             case "eliminar":
+                String idUsuario = request.getParameter("idUser");
+                String msj = uBusinessImpl.eliminarUsuario(idUsuario);
+                
+                List<Usuario> listaUsers = uBusinessImpl.obtenerListaUsuarios();
+                session.setAttribute("LISTADO", listaUsers);
+                
+                rd = request.getRequestDispatcher("/view/usuarioLista.jsp");
                 break;
 
+            case "modificar":
+                String idUserUPDT = request.getParameter("idUser");
+                
+                Usuario userUPDT = uBusinessImpl.obtenerUsuario(idUserUPDT);
+                session.setAttribute("UMODIFICADO", userUPDT);// mando el obj(User) a la ruta rd para modificarlo
+                
+                rd = request.getRequestDispatcher("/view/modUsuario.jsp");
+                break;
+                
             case "actualizar":
+                String documentoMOD = request.getParameter("txtdocumento");
+                String nombresMOD = request.getParameter("txtnombres");
+                String apellidosMOD = request.getParameter("txtapellidos");
+                String emailMOD = request.getParameter("txtemail");
+                String claveMOD = request.getParameter("txtclave");
+                Boolean estadoMOD = Boolean.valueOf(request.getParameter("txtestado"));
+                String rolMOD = request.getParameter("txtrol");
+                
+                Usuario userMOD = new Usuario(documentoMOD, nombresMOD, apellidosMOD, emailMOD, claveMOD, rolMOD, estadoMOD);
+                String msjMOD = uBusinessImpl.modificarUsuario(userMOD);
+                List<Usuario> listaUsuariosMOD = uBusinessImpl.obtenerListaUsuarios();
+                session.setAttribute("LISTADO", listaUsuariosMOD);
+                
+                rd = request.getRequestDispatcher("/view/usuarioLista.jsp");
                 break;
 
             case "listar":

@@ -14,7 +14,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../../../favicon.ico">
 
-        <title>Template for USERS</title>
+        <title>USERS</title>
 
         <!-- Bootstrap core CSS -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@
 
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 
-            <a class="navbar-brand" href="#">Aplicacion - USUARIOS -</a>
+            <a class="navbar-brand" href="${pageContext.servletContext.contextPath}/view/menu.jsp">Aplicacion - USUARIOS -</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,17 +35,21 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/menu.jsp">MENU</a>
+                    </li>                    
                     <li class="nav-item active">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/menu.jsp">MENU <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">Usuarios</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/cursos.jsp">Cursos</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
+                    </li>                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursosServlet?accion=listar">Listar Cursos</a>
                     </li>
 
                 </ul>        
@@ -58,6 +62,7 @@
             <div class="jumbotron">
                 <div class="container">
                     
+                    <!-- FORMULARIO -->
                     <!-- FORM INVOCA AL SERVLET -->
                     <form method="post"
                           action="${pageContext.servletContext.contextPath}/UsuariosServlet">
@@ -89,43 +94,48 @@
                         </div>
 
                         <div class="form-row">
-                            <div class="col">
-                                <label for="inputState">Estado</label>
+                            <div class="col-sm-3">
+                                <label for="inputState">Estado</label>                                 
+                            </div>
+                            <div class="col-sm-3">
                                 <select id="inputState" class="form-control" name="txtestado">
                                     <option selected value="TRUE">Activo</option>
                                     <option value="FALSE">Inactivo</option>
                                 </select>
                             </div>
-                            <div class="col">
-                                <label for="inputState">Rol</label>
+
+                            <div class="col-sm-3">
+                                <label for="inputState">Rol</label>                                 
+                            </div>
+                            <div class="col-sm-3">
                                 <select id="inputState" class="form-control" name="txtrol">
                                     <option selected value="Admin">Admin</option>
                                     <option value="Consulta">Consulta</option>
                                     <option value="Visitante">Visitante</option>
                                 </select>
                             </div>
+
                         </div>
-                        <br>
-                        
-                        <div class="form-row">
-                            <div class="col">
-                                <button name="accion" value="crear" type="submit" class="btn btn-primary">Registrar</button>
-                            </div>
-                            <div class="col">
+                        <br><br><br>
+
+                        <!-- DIV BOTONES -->
+                        <center>
+                            <div class="">
+                                <button name="accion" value="crear" type="submit" class="btn btn-primary">Registrar usuario</button>
+                            </div>                            
+                            <!--div class="">
                                 <button name="accion" value="listar" type="submit" class="btn btn-primary">Listar Usuarios</button>
-                            </div>
-                        </div>
-                        
-                    </form>
+                            </div-->
+                        </center>
+
+                    </form><!-- FORMULARIO -->
 
                 </div>
             </div>
 
         </main>
 
-        <footer class="container">
-            <p>&copy; Company 2017-2018</p>
-        </footer>
+        <%@ include file = "/WEB-INF/jspf/footer.jspf" %>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

@@ -35,17 +35,22 @@
 
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
-
+                    
                     <li class="nav-item active">
-                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">Usuarios <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/menu.jsp">MENU</a>
                     </li>
 
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/usuarios.jsp">Usuarios</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.servletContext.contextPath}/view/cursos.jsp">Cursos</a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/UsuariosServlet?accion=listar">Listar Usuarios</a>
+                    </li> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="${pageContext.servletContext.contextPath}/CursosServlet?accion=listar">Listar Cursos</a>
                     </li>
 
                 </ul>        
@@ -57,15 +62,13 @@
             <!-- Main jumbotron for a primary marketing message or call to action -->
             <div class="jumbotron">
                 <div class="container">
-                    <p>ESTE ES EL MENU PPAL DE LA APLICACION</p>
+                    <p>ESTE ES EL MENU PPAL DE LA APLICACION - CRISTIAN GARCES -</p>
                 </div>
             </div>
 
         </main>
 
-        <footer class="container">
-            <p>&copy; Company 2018</p>
-        </footer>
+        <%@ include file = "/WEB-INF/jspf/footer.jspf" %>
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
